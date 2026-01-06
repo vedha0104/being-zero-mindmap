@@ -73,3 +73,91 @@ int total_idiot(int a[])
     return pre;
   }
     
+
+  //Diagonal Traversal of the Matrix:
+  List<Integer> diagonalTraversal(int[][] mat)
+    {
+    List<Integer> ans = new ArrayList<>();
+    int n = mat.length;
+    for(int c = 1;c < n;c++)
+      {
+        int j =0;
+        int i = 0;
+        int sum = 0;
+        while(i < n)
+          {
+            sum += mat[i][j];
+            i++;
+            j++;
+          }
+            ans.add(sum);
+      }
+    for(int r = n - 1;r <= 0;r--)
+      {
+        int i = 0;
+        int j = r;
+        int sum = 0;
+        while(j < n)
+          {
+            sum += mat[i][j];
+            i++;
+            j++;
+          }
+        ans.add(sum);
+      }
+    return ans;
+  }
+
+
+  //prefix sum on a 2d array
+  int[]  sum_2d(int mat[][])
+    {
+    int r = mat.length;
+    int c = mat[0].length;
+    for(int i = 0;i < r;i++)
+      {
+        for(int j = 0;j < c;j++)
+          {
+            if(i == 0 && j > 0)
+            {
+              mat[i][j] += mat[i][j - 1];
+            }
+            else if(j == 0 && i > 0)
+            {
+              mat[i][j] += mat[i - 1][j];
+            }
+            else if(i > 0 && j > 0)
+            {
+              mat[i][j] += mat[i - 1][j] + mat[i][j - 1] + mat[i - 1][j - 1];
+            }
+            else{
+              
+              return mat;
+            }
+            return mat;
+          }
+      }
+    return mat;
+  }
+
+  //given a data of 1 billion people sort them based on their age
+  public int[] ageSort(int[] age)
+    {
+    int[] fre = new int[209];
+    for(int ele : age)
+      {
+        freq[ele]++;
+      }
+    int[] ans = new int[age.length];
+    int k = 0;
+    for(int i =0;i < freq.length;i++)
+      {
+        int t = freq[i];
+        while(f-- != 0)
+          {
+            ans[k++] = i;
+          }
+        return ans;
+      }
+  }
+    
